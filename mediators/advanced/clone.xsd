@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:include schemaLocation="../../misc/target.xsd"/>
+
     <xs:element name="clone">
         <xs:complexType>
             <xs:sequence>
-                <xs:element maxOccurs="unbounded" ref="target"/>
+                <xs:element name="target" type="Target" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="target">
-        <xs:complexType>
-            <xs:attribute name="sequence" use="required" type="xs:NCName"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
