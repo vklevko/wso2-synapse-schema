@@ -3,7 +3,7 @@
            targetNamespace="http://ws.apache.org/ns/synapse"
            xmlns="http://ws.apache.org/ns/synapse">
 
-    <xs:include schemaLocation="misc/common.xsd"/>
+    <xs:include schemaLocation="../misc/common.xsd"/>
 
     <xs:element name="messageStore" type="MessageStore">
         <xs:annotation>

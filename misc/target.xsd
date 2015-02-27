@@ -23,7 +23,7 @@
            xmlns:tns="http://ws.apache.org/ns/synapse"
            xmlns="http://ws.apache.org/ns/synapse">
 
-    <xs:include schemaLocation="../endpoint.xsd"/>
+    <xs:include schemaLocation="../definitions/endpoint.xsd"/>
     <xs:include schemaLocation="../mediators/mediators.xsd"/>
 
     <xs:element name="target" type="Target">

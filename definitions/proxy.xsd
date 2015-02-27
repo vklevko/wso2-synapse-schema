@@ -22,7 +22,7 @@
            targetNamespace="http://ws.apache.org/ns/synapse"
            xmlns="http://ws.apache.org/ns/synapse">
 
-    <xs:include schemaLocation="mediators/mediators.xsd"/>
+    <xs:include schemaLocation="../mediators/mediators.xsd"/>
 
     <xs:element name="proxy" type="Proxy">
         <xs:annotation>

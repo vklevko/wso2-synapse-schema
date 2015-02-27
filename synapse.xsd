@@ -22,18 +22,17 @@
            targetNamespace="http://ws.apache.org/ns/synapse"
            xmlns="http://ws.apache.org/ns/synapse">
 
-    <xs:include schemaLocation="sequence.xsd"/>
-    <xs:include schemaLocation="endpoint.xsd"/>
-    <xs:include schemaLocation="proxy.xsd"/>
-    <xs:include schemaLocation="event_source.xsd"/>
-    <xs:include schemaLocation="local_entry.xsd"/>
-    <xs:include schemaLocation="registry.xsd"/>
-    <xs:include schemaLocation="task.xsd"/>
-    <xs:include schemaLocation="priority_executor.xsd"/>
-	<xs:include schemaLocation="mediators/mediators.xsd"/>
-    <xs:include schemaLocation="template.xsd"/>
-    <xs:include schemaLocation="messageProcessor.xsd"/>
-    <xs:include schemaLocation="messageStore.xsd"/>
+    <xs:include schemaLocation="definitions/sequence.xsd"/>
+    <xs:include schemaLocation="definitions/endpoint.xsd"/>
+    <xs:include schemaLocation="definitions/proxy.xsd"/>
+    <xs:include schemaLocation="definitions/event_source.xsd"/>
+    <xs:include schemaLocation="definitions/local_entry.xsd"/>
+    <xs:include schemaLocation="definitions/registry.xsd"/>
+    <xs:include schemaLocation="definitions/task.xsd"/>
+    <xs:include schemaLocation="definitions/priority_executor.xsd"/>
+    <xs:include schemaLocation="definitions/template.xsd"/>
+    <xs:include schemaLocation="definitions/messageProcessor.xsd"/>
+    <xs:include schemaLocation="definitions/messageStore.xsd"/>
 
     <xs:element name="definitions" type="Definition">
         <xs:annotation>
