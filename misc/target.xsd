@@ -20,6 +20,7 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
            targetNamespace="http://ws.apache.org/ns/synapse"
+           xmlns:tns="http://ws.apache.org/ns/synapse"
            xmlns="http://ws.apache.org/ns/synapse">
 
     <xs:include schemaLocation="../endpoint.xsd"/>
@@ -47,47 +48,12 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="endpoint" type="Endpoint" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="endpoint" type="tns:Endpoint" minOccurs="0" maxOccurs="1"/>
         </xs:all>
         <xs:attribute name="sequence" type="xs:string" use="optional"/>
         <xs:attribute name="endpoint" type="xs:string" use="optional"/>
     </xs:complexType>
 
-    <xs:complexType name="ProxyTarget">
-        <xs:annotation>
-            <xs:documentation>
-                This denotes the target for a proxy or for various mediators
-            </xs:documentation>
-        </xs:annotation>
-        <xs:all>
-            <xs:element name="inSequence" minOccurs="0" maxOccurs="1">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:group ref="mediatorList" minOccurs="1" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                    <xs:attribute name="onError" type="xs:string" use="optional"/>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="outSequence" minOccurs="0" maxOccurs="1">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:group ref="mediatorList" minOccurs="0" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="faultSequence" minOccurs="0" maxOccurs="1">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:group ref="mediatorList" minOccurs="0" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="endpoint" type="Endpoint" minOccurs="0" maxOccurs="1"/>
-        </xs:all>
-        <xs:attribute name="inSequence" type="xs:string" use="optional"/>
-        <xs:attribute name="outSequence" type="xs:string" use="optional"/>
-        <xs:attribute name="faultSequence" type="xs:string" use="optional"/>
-        <xs:attribute name="endpoint" type="xs:string" use="optional"/>
-    </xs:complexType>
+
 
 </xs:schema>
