@@ -53,6 +53,7 @@
     <xs:include schemaLocation="advanced/clone.xsd"/>
     <xs:include schemaLocation="core/payloadFactory.xsd"/>
     <xs:include schemaLocation="core/call-template.xsd"/>
+    <xs:include schemaLocation="core/call.xsd"/>
 
     <xs:group name="mediatorList">
         <xs:annotation>
@@ -103,6 +104,7 @@
             <xs:element ref="clone"/>
             <xs:element ref="payloadFactory"/>
             <xs:element ref="call-template"/>
+            <xs:element ref="call"/>
         </xs:choice>
     </xs:group>
 
