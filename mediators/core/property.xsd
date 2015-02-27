@@ -30,9 +30,6 @@
                 Property mediator to process properties of the messages
             </xs:documentation>
         </xs:annotation>
-        <xs:complexType>
-
-        </xs:complexType>
     </xs:element>
 
     <xs:complexType name="PropertyType">
