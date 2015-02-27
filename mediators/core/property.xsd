@@ -32,6 +32,20 @@
         </xs:annotation>
         <xs:complexType>
             <xs:attributeGroup ref="nameValueOrExpression"/>
+            <xs:attribute name="type" use="optional">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="STRING"/>
+                    <xs:enumeration value="INTEGER"/>
+                    <xs:enumeration value="BOOLEAN"/>
+                    <xs:enumeration value="DOUBLE"/>
+                    <xs:enumeration value="FLOAT"/>
+                    <xs:enumeration value="LONG"/>
+                    <xs:enumeration value="SHORT"/>
+                    <xs:enumeration value="OM"/>
+                </xs:restriction>
+            </xs:simpleType>
+            </xs:attribute>
             <xs:attribute name="scope" use="optional" default="default">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
