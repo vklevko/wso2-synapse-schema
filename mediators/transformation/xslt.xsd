@@ -6,7 +6,35 @@
     <xs:element name="xslt">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="property" type="PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="property" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attributeGroup ref="nameValueOrExpression"/>
+                        <xs:attribute name="type" use="optional">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="STRING"/>
+                                    <xs:enumeration value="INTEGER"/>
+                                    <xs:enumeration value="BOOLEAN"/>
+                                    <xs:enumeration value="DOUBLE"/>
+                                    <xs:enumeration value="FLOAT"/>
+                                    <xs:enumeration value="LONG"/>
+                                    <xs:enumeration value="SHORT"/>
+                                    <xs:enumeration value="OM"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="scope" use="optional" default="default">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="default"/>
+                                    <xs:enumeration value="axis2"/>
+                                    <xs:enumeration value="transport"/>
+                                    <xs:enumeration value="axis2-client"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
             <xs:attribute name="description" use="optional" type="xs:NCName"/>
             <xs:attribute name="key" use="required" type="xs:anyURI"/>

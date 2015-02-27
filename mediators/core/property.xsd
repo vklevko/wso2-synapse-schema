@@ -24,40 +24,39 @@
 
     <xs:include schemaLocation="../../misc/common.xsd"/>
 
-    <xs:element name="property" type="PropertyType">
+    <xs:element name="property">
         <xs:annotation>
             <xs:documentation source="description">
                 Property mediator to process properties of the messages
             </xs:documentation>
         </xs:annotation>
+        <xs:complexType>
+            <xs:attributeGroup ref="nameValueOrExpression"/>
+            <xs:attribute name="type" use="optional">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="STRING"/>
+                        <xs:enumeration value="INTEGER"/>
+                        <xs:enumeration value="BOOLEAN"/>
+                        <xs:enumeration value="DOUBLE"/>
+                        <xs:enumeration value="FLOAT"/>
+                        <xs:enumeration value="LONG"/>
+                        <xs:enumeration value="SHORT"/>
+                        <xs:enumeration value="OM"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="scope" use="optional" default="default">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="default"/>
+                        <xs:enumeration value="axis2"/>
+                        <xs:enumeration value="transport"/>
+                        <xs:enumeration value="axis2-client"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
     </xs:element>
-
-    <xs:complexType name="PropertyType">
-        <xs:attributeGroup ref="nameValueOrExpression"/>
-        <xs:attribute name="type" use="optional">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="STRING"/>
-                    <xs:enumeration value="INTEGER"/>
-                    <xs:enumeration value="BOOLEAN"/>
-                    <xs:enumeration value="DOUBLE"/>
-                    <xs:enumeration value="FLOAT"/>
-                    <xs:enumeration value="LONG"/>
-                    <xs:enumeration value="SHORT"/>
-                    <xs:enumeration value="OM"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="scope" use="optional" default="default">
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="default"/>
-                    <xs:enumeration value="axis2"/>
-                    <xs:enumeration value="transport"/>
-                    <xs:enumeration value="axis2-client"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-    </xs:complexType>
 
 </xs:schema>
