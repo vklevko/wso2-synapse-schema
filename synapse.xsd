@@ -31,6 +31,7 @@
     <xs:include schemaLocation="task.xsd"/>
     <xs:include schemaLocation="priority_executor.xsd"/>
 	<xs:include schemaLocation="mediators/mediators.xsd"/>
+    <xs:include schemaLocation="template.xsd"/>
 
     <xs:element name="definitions" type="Definition">
         <xs:annotation>
@@ -58,6 +59,7 @@
             <xs:element ref="proxy" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="eventSource" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element ref="task" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="template" minOccurs="0" maxOccurs="unbounded"/>
         </xs:choice>
     </xs:complexType>
 

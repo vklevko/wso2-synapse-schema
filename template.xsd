@@ -1,0 +1,24 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://ws.apache.org/ns/synapse"
+           xmlns="http://ws.apache.org/ns/synapse">
+
+    <xs:include schemaLocation="misc/target.xsd"/>
+    <xs:include schemaLocation="misc/common.xsd"/>
+    <xs:include schemaLocation="sequence.xsd"/>
+
+    <xs:element name="template" type="templateType">
+        <xs:annotation>
+            <xs:documentation source="description">
+                Proxy Service element in the Synapse Configuration
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:complexType name="templateType">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element ref="endpoint"/>
+            <xs:element ref="sequence"/>
+            <xs:element ref="parameter" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>
