@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.apache.org/ns/synapse">
+    <xs:element name="payloadFactory" type="payloadFactoryType"/>
+    <xs:complexType name="payloadFactoryType">
+        <xs:sequence>
+            <xs:element name="format" type="formatType"/>
+            <xs:element name="args" type="argsType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="formatType">
+        <xs:sequence>
+            <xs:any/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="argsType">
+        <xs:sequence>
+            <xs:element type="argType" name="arg" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="argType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="expression" use="optional"/>
+                <xs:attribute type="xs:string" name="value" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

@@ -51,6 +51,7 @@
     <xs:include schemaLocation="eip/aggregate.xsd"/>
     <xs:include schemaLocation="advanced/enrich.xsd"/>
     <xs:include schemaLocation="advanced/clone.xsd"/>
+    <xs:include schemaLocation="core/payloadFactory.xsd"/>
 
     <xs:group name="mediatorList">
         <xs:annotation>
@@ -99,6 +100,7 @@
             <xs:element ref="enqueue"/>
             <xs:element ref="enrich"/>
             <xs:element ref="clone"/>
+            <xs:element ref="payloadFactory"/>
         </xs:choice>
     </xs:group>
 
