@@ -56,7 +56,7 @@
                                 <xs:restriction base="xs:string">
                                     <xs:enumeration value="replace"/>
                                     <xs:enumeration value="child"/>
-                                    <xs:enumeration value="sibiling"/>
+                                    <xs:enumeration value="sibling"/>
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>
