@@ -3,7 +3,6 @@
            targetNamespace="http://ws.apache.org/ns/synapse"
            xmlns="http://ws.apache.org/ns/synapse">
 
-    <xs:include schemaLocation="mediators/mediators.xsd"/>
     <xs:include schemaLocation="misc/common.xsd"/>
 
     <xs:element name="messageStore" type="MessageStore">
@@ -21,18 +20,8 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="parameter" type="MessageStoreParameterType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="parameter" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute name="name" type="xs:string" use="required"/>
-        <xs:attribute name="class" type="xs:string" use="required"/>
+        <xs:attributeGroup ref="nameAndClass"/>
     </xs:complexType>
-
-    <xs:complexType name="MessageStoreParameterType">
-        <xs:complexContent>
-            <xs:extension base="xs:string">
-                <xs:attribute name="name" type="xs:string" use="required"/>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
 </xs:schema>
