@@ -32,6 +32,20 @@
         </xs:annotation>
     </xs:element>
 
+    <xs:complexType name="AddressEndpoint">
+        <xs:sequence>
+            <xs:element name="address">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="DefaultEndpoint">
+                            <xs:attribute name="uri" type="xs:anyURI" use="required"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="NamedEndpoint">
         <xs:annotation>
             <xs:documentation source="description">
@@ -55,6 +69,7 @@
             <xs:group ref="leafEndpoints" minOccurs="0" maxOccurs="1"/>
             <xs:group ref="aggregatedEndpoints" minOccurs="0" maxOccurs="1"/>
             <xs:group ref="dynamicLB" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="address" type="AddressEndpoint"/>
         </xs:choice>
         <xs:attribute name="name" type="xs:string" use="optional"/>
         <xs:attribute name="key" type="xs:string" use="optional"/>
