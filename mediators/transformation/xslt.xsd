@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:include schemaLocation="../core/property.xsd"/>
+
     <xs:element name="xslt">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="property" minOccurs="0"/>
+                <xs:element name="property" type="PropertyType" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="description" use="required" type="xs:NCName"/>
             <xs:attribute name="key" use="required" type="xs:anyURI"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="property">
-        <xs:complexType>
-            <xs:attribute name="expression" use="required"/>
-            <xs:attribute name="name" use="required" type="xs:NCName"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
