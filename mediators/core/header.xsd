@@ -21,7 +21,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
            targetNamespace="http://ws.apache.org/ns/synapse"
            xmlns="http://ws.apache.org/ns/synapse">
-    
+
     <xs:include schemaLocation="../../misc/common.xsd"/>
 
     <xs:element name="header">
@@ -32,6 +32,16 @@
         </xs:annotation>
         <xs:complexType>
             <xs:attributeGroup ref="nameValueOrExpression"/>
+            <xs:attribute name="scope" use="optional" default="default">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="default"/>
+                        <xs:enumeration value="axis2"/>
+                        <xs:enumeration value="transport"/>
+                        <xs:enumeration value="axis2-client"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
 
