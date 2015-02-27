@@ -24,13 +24,13 @@
             <xs:element name="parameter" type="MessageStoreParameterType" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="class" type="xs:string" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="MessageStoreParameterType">
         <xs:complexContent>
             <xs:extension base="xs:string">
                 <xs:attribute name="name" type="xs:string" use="required"/>
-                <xs:attribute name="class" type="xs:string" use="optional"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
