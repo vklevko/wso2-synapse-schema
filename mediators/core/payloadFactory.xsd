@@ -6,7 +6,7 @@
 
     <xs:complexType name="payloadFactoryType">
         <xs:sequence>
-            <xs:element name="format" minOccurs="1"/>
+            <xs:element name="format" minOccurs="1" type="xs:anyType"/>
             <xs:element name="args" type="argsType"/>
         </xs:sequence>
     </xs:complexType>
