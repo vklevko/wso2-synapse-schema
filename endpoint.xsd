@@ -24,12 +24,21 @@
 
     <xs:include schemaLocation="misc/common.xsd"/>
 
-    <xs:element name="endpoint" type="NamedEndpoint">
-        <xs:annotation>
-            <xs:documentation source="description">
-                &lt;endpoint&gt; declarations for the synapse configuration
-            </xs:documentation>
-        </xs:annotation>
+    <xs:element name="endpoint">
+        <xs:complexType>
+            <xs:annotation>
+                <xs:documentation source="description">
+                    &lt;endpoint&gt; declarations for the synapse configuration
+                </xs:documentation>
+            </xs:annotation>
+            <xs:complexContent>
+                <xs:extension base="NamedEndpoint">
+                    <xs:sequence>
+                        <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
     </xs:element>
 
     <xs:complexType name="NamedEndpoint">
@@ -145,7 +154,8 @@
                             </xs:complexType>
                         </xs:element>
                     </xs:choice>
-                    <xs:attribute name="algorithm" type="xs:string" default="org.apache.synapse.endpoints.algorithms.RoundRobin" use="optional"/>
+                    <xs:attribute name="algorithm" type="xs:string"
+                                  default="org.apache.synapse.endpoints.algorithms.RoundRobin" use="optional"/>
                     <xs:attribute name="failover" type="xs:boolean" default="true" use="optional"/>
                 </xs:complexType>
             </xs:element>
@@ -198,11 +208,13 @@
                                         </xs:complexType>
                                     </xs:element>
                                 </xs:sequence>
-                                <xs:attribute name="class" type="xs:string" use="optional" default="org.apache.synapse.core.axis2.Axis2LoadBalanceMembershipHandler"/>
+                                <xs:attribute name="class" type="xs:string" use="optional"
+                                              default="org.apache.synapse.core.axis2.Axis2LoadBalanceMembershipHandler"/>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
-                    <xs:attribute name="algorithm" type="xs:string" use="optional" default="org.apache.synapse.endpoints.algorithms.RoundRobin"/>
+                    <xs:attribute name="algorithm" type="xs:string" use="optional"
+                                  default="org.apache.synapse.endpoints.algorithms.RoundRobin"/>
                     <xs:attribute name="failover" type="xs:boolean" use="optional" default="true"/>
                 </xs:complexType>
             </xs:element>
@@ -216,7 +228,6 @@
             </xs:documentation>
         </xs:annotation>
         <xs:all>
-            <xs:element name="description" minOccurs="0" maxOccurs="1" type="xs:string"/>
             <xs:element name="enableRM" minOccurs="0" maxOccurs="1">
                 <xs:complexType>
                     <xs:attribute name="policy" type="xs:string" use="optional"/>
