@@ -41,7 +41,6 @@
         <xs:complexContent>
             <xs:extension base="Endpoint">
                 <xs:attribute name="name" type="xs:string" use="required"/>
-                <xs:attribute name="description" type="xs:string" use="optional"/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -217,6 +216,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:all>
+            <xs:element name="description" minOccurs="0" maxOccurs="1" type="xs:string"/>
             <xs:element name="enableRM" minOccurs="0" maxOccurs="1">
                 <xs:complexType>
                     <xs:attribute name="policy" type="xs:string" use="optional"/>
