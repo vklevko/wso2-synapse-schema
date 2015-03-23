@@ -8,6 +8,7 @@
             <xs:sequence>
                 <xs:element name="target" type="Target" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
+            <xs:attribute name="continueParent" type="xs:boolean"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
