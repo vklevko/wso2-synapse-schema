@@ -43,6 +43,7 @@
         </xs:sequence>
         <xs:attribute name="name" type="xs:string" use="required"/>
         <xs:attribute name="context" type="xs:string" use="required"/>
+        <xs:attribute name="port" type="xs:int" use="optional"/>
     </xs:complexType>
 
     <xs:complexType name="Resource">
@@ -58,12 +59,20 @@
                     <xs:attribute name="onError" type="xs:string" use="optional"/>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="outSequence" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="mediatorList" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:sequence>
         <xs:attribute name="url-mapping" type="xs:string" use="optional"/>
         <xs:attribute name="uri-template" type="xs:string" use="optional"/>
         <xs:attribute name="methods" type="xs:string" use="optional"/>
         <xs:attribute name="inSequence" type="xs:string" use="optional"/>
         <xs:attribute name="outSequence" type="xs:string" use="optional"/>
+        <xs:attribute name="faultSequence" type="xs:string" use="optional"/>
     </xs:complexType>
 
 </xs:schema>
