@@ -38,6 +38,7 @@
             </xs:sequence>
             <xs:attribute name="description" use="optional" type="xs:NCName"/>
             <xs:attribute name="key" use="required" type="xs:anyURI"/>
+            <xs:attribute name="source" type="xs:string" use="optional"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
