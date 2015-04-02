@@ -20,7 +20,15 @@
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:string" name="expression" use="optional"/>
                 <xs:attribute type="xs:string" name="value" use="optional"/>
+                <xs:attribute name="evaluator" use="optional" type="evaluatoryType"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+
+    <xs:simpleType name="evaluatoryType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="xml"/>
+            <xs:enumeration value="json"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
