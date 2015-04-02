@@ -11,7 +11,7 @@
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
-                        <xs:attribute name="clone" use="required" type="xs:boolean">
+                        <xs:attribute name="clone" use="optional" type="xs:boolean">
                             <xs:annotation>
                                 <xs:documentation>
                                     Weather message can be cloned or use as a reference during the enriching
