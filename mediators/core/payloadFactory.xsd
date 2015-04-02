@@ -9,6 +9,8 @@
             <xs:element name="format" minOccurs="1" type="xs:anyType"/>
             <xs:element name="args" type="argsType"/>
         </xs:sequence>
+        <xs:attribute name="media-type" type="xmlJsonType" use="optional"/>
+        <xs:attribute name="description" type="xs:string" use="optional"/>
     </xs:complexType>
     <xs:complexType name="argsType">
         <xs:sequence>
@@ -20,12 +22,12 @@
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:string" name="expression" use="optional"/>
                 <xs:attribute type="xs:string" name="value" use="optional"/>
-                <xs:attribute name="evaluator" use="optional" type="evaluatoryType"/>
+                <xs:attribute name="evaluator" use="optional" type="xmlJsonType"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
 
-    <xs:simpleType name="evaluatoryType">
+    <xs:simpleType name="xmlJsonType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="xml"/>
             <xs:enumeration value="json"/>
