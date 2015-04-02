@@ -46,7 +46,7 @@
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
-                        <xs:attribute name="action" use="required" default="replace">
+                        <xs:attribute name="action" use="optional" default="replace">
                             <xs:annotation>
                                 <xs:documentation>
                                     The relevant action can be applied to outgoing message.
