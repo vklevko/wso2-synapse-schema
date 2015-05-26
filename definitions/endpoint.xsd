@@ -64,10 +64,31 @@
             <xs:group ref="leafEndpoints" minOccurs="0" maxOccurs="1"/>
             <xs:group ref="aggregatedEndpoints" minOccurs="0" maxOccurs="1"/>
             <xs:group ref="dynamicLB" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="http">
+                <xs:annotation>
+                    <xs:documentation>
+                        Definition of the HTTP endpoint. https://docs.wso2.com/display/ESB480/HTTP+Endpoint
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:attribute name="uri-template" type="xs:anyURI" use="required"/>
+                    <xs:attribute name="method" type="HTTPMethodsType" use="required"/>
+                </xs:complexType>
+            </xs:element>
         </xs:choice>
         <xs:attribute name="name" type="xs:string" use="optional"/>
         <xs:attribute name="key" type="xs:string" use="optional"/>
     </xs:complexType>
+
+    <xs:simpleType name="HTTPMethodsType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GET"/>
+            <xs:enumeration value="POST"/>
+            <xs:enumeration value="PUSH"/>
+            <xs:enumeration value="PUT"/>
+            <xs:enumeration value="DELETE"/>
+        </xs:restriction>
+    </xs:simpleType>
 
     <xs:group name="leafEndpoints">
         <xs:annotation>
@@ -86,6 +107,7 @@
                     </xs:complexContent>
                 </xs:complexType>
             </xs:element>
+
             <xs:element name="wsdl">
                 <xs:complexType>
                     <xs:complexContent>
