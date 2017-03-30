@@ -20,5 +20,6 @@
             <xs:element ref="sequence"/>
             <xs:element ref="parameter" minOccurs="0" maxOccurs="unbounded"/>
         </xs:choice>
+        <xs:attribute name="name" type="xs:string" use="optional"/>
     </xs:complexType>
 </xs:schema>
