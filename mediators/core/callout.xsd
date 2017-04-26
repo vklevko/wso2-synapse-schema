@@ -59,8 +59,10 @@
                     </xs:complexType>
                 </xs:element>
             </xs:choice>
-            <xs:attribute name="serviceURL" type="xs:string" use="required"/>
+            <xs:attribute name="serviceURL" type="xs:string" use="optional"/>
             <xs:attribute name="action" type="xs:string" use="optional"/>
+            <xs:attribute name="initAxis2ClientOptions" type="xs:boolean" use="optional"/>
+            <xs:attribute name="endpointKey" type="xs:string" use="optional"/>
         </xs:complexType>
     </xs:element>
 
