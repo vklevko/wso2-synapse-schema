@@ -56,6 +56,7 @@
     <xs:include schemaLocation="core/call.xsd"/>
     <xs:include schemaLocation="core/store.xsd"/>
     <xs:include schemaLocation="core/respond.xsd"/>
+    <xs:include schemaLocation="core/loopback.xsd"/>
 
     <xs:group name="mediatorList">
         <xs:annotation>
@@ -109,6 +110,7 @@
             <xs:element ref="call"/>
             <xs:element ref="store"/>
             <xs:element ref="respond"/>
+            <xs:element ref="loopback"/>
         </xs:choice>
     </xs:group>
 
